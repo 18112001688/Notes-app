@@ -9,17 +9,18 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            showModalBottomSheet(
-                context: context,
-                builder: (context) {
-                  return const AddNoteBottomSheet();
-                });
-          },
-          child: IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () {},
-          )),
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return const AddNoteBottomSheet();
+              },
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ));
+        },
+        child: const Icon(Icons.add),
+      ),
       body: const NotesViewBody(),
     );
   }
