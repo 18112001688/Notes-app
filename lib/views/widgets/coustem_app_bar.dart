@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/views/widgets/coustem_search_button.dart';
 
 class CoustemAppBar extends StatelessWidget {
-  const CoustemAppBar({super.key});
-
+  const CoustemAppBar({super.key, required this.icon, required this.title});
+  final IconData icon;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
+      children: [
         Text(
-          'Notes',
-          style: TextStyle(
+          title,
+          style: const TextStyle(
             fontSize: 28,
           ),
         ),
-        CoustemSerarchButton()
+        CoustemSerarchButton(icon: icon)
       ],
     );
   }
