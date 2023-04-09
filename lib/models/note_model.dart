@@ -1,7 +1,17 @@
-class NoteModel {
+import 'package:hive/hive.dart';
+part 'note_model.g.dart';
+
+// every class should have an id
+@HiveType(typeId: 1)
+class NoteModel extends HiveObject {
+// every varible takes a unique key
+  @HiveField(0)
   final String title;
+  @HiveField(1)
   final String subTitle;
+  @HiveField(2)
   final String date;
+  @HiveField(3)
   final int color;
 
   NoteModel({
