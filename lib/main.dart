@@ -4,7 +4,7 @@ import 'package:notes_app/constant/constant.dart';
 import 'package:notes_app/views/notes_view.dart';
 
 void main() async {
-  // intilaize flutter for the project
+  // intilaize flutter hive for the project
   await Hive.initFlutter();
   // oprning a box to put are data in
   await Hive.openBox(knotesBox);

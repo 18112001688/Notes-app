@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
 part 'note_model.g.dart';
 
-// every class should have an id
+// every class  have an shouldid
 @HiveType(typeId: 1)
 class NoteModel extends HiveObject {
 // every varible takes a unique key
