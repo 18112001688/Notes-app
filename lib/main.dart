@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/constant/constant.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/simple_bloc_obsev.dart';
 import 'package:notes_app/views/notes_view.dart';
 
 import 'addnote_cubit/cubit/add_note_cubit.dart';
@@ -14,6 +15,8 @@ void main() async {
   await Hive.openBox(knotesBox);
   // adding the addabter that has been genrated
   Hive.registerAdapter(NoteModelAdapter());
+
+  Bloc.observer = SimpleBlocObserver();
 
   runApp(const NotesApp());
 }
