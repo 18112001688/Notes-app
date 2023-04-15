@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/addnote_cubit/cubit/add_note_cubit.dart';
+import 'package:notes_app/models/note_model.dart';
 
 import 'button.dart';
 import 'coustem_field.dart';
@@ -20,6 +23,7 @@ class _AddNotesFormState extends State<AddNotesForm> {
 
   String? title;
   String? subtitle;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -53,6 +57,13 @@ class _AddNotesFormState extends State<AddNotesForm> {
               // make the vldation when tab the add button
               if (formkey.currentState!.validate()) {
                 formkey.currentState!.save();
+                var noteModel = NoteModel(
+                    subTitle: subtitle!,
+                    title: title!,
+                    date: DateTime.now().toString(),
+                    // . value because huve does not takes objects and value retruns the  intger of a color
+                    color: Colors.blue.value);
+                BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
               } else {
                 //is an enum property that determines how the form fields should be automatically validated. Setting it to , it change the color of the form red to green
                 // as you begain weitting
