@@ -6,8 +6,6 @@ import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/simple_bloc_obsev.dart';
 import 'package:notes_app/views/notes_view.dart';
 
-import 'addnote_cubit/cubit/add_note_cubit.dart';
-
 void main() async {
   // intilaize flutter hive for the project
   await Hive.initFlutter();

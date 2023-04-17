@@ -52,24 +52,29 @@ class _AddNotesFormState extends State<AddNotesForm> {
           const SizedBox(
             height: 30,
           ),
-          AddButton(
-            onPressed: () {
-              // make the vldation when tab the add button
-              if (formkey.currentState!.validate()) {
-                formkey.currentState!.save();
-                var noteModel = NoteModel(
-                    subTitle: subtitle!,
-                    title: title!,
-                    date: DateTime.now().toString(),
-                    // . value because huve does not takes objects and value retruns the  intger of a color
-                    color: Colors.blue.value);
-                BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-              } else {
-                //is an enum property that determines how the form fields should be automatically validated. Setting it to , it change the color of the form red to green
-                // as you begain weitting
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
+          BlocBuilder<AddNoteCubit, AddNoteState>(
+            builder: (context, state) {
+              return AddButton(
+                isLoading: state is AddNoteLoading ? true : false,
+                onPressed: () {
+                  // make the vldation when tab the add button
+                  if (formkey.currentState!.validate()) {
+                    formkey.currentState!.save();
+                    var noteModel = NoteModel(
+                        subTitle: subtitle!,
+                        title: title!,
+                        date: DateTime.now().toString(),
+                        // . value because huve does not takes objects and value retruns the  intger of a color
+                        color: Colors.blue.value);
+                    BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                  } else {
+                    //is an enum property that determines how the form fields should be automatically validated. Setting it to , it change the color of the form red to green
+                    // as you begain weitting
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+              );
             },
           ),
           const SizedBox(
