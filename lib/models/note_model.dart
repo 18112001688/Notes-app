@@ -23,4 +23,14 @@ class NoteModel extends HiveObject {
     required this.date,
     required this.color,
   });
+
+  String getFormattedDate() {
+    // Convert the 'date' string to DateTime object
+    DateTime dateTime = DateTime.parse(date);
+    // Create a DateFormat object with the desired format
+    DateFormat formatter = DateFormat('MMM dd, yyyy');
+    // Format the date using the formatter
+    String formattedDate = formatter.format(dateTime);
+    return formattedDate;
+  }
 }
