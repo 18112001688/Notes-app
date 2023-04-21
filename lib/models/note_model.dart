@@ -2,8 +2,6 @@ import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 part 'note_model.g.dart';
 
-DateTime now = DateTime.now();
-
 // every class  have an shouldid
 @HiveType(typeId: 1)
 class NoteModel extends HiveObject {
