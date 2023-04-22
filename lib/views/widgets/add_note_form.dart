@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/addnote_cubit/cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/views/widgets/colors_list_view.dart';
 
 import 'button.dart';
 import 'coustem_field.dart';
@@ -49,6 +50,7 @@ class _AddNotesFormState extends State<AddNotesForm> {
               onSaved: (value) {
                 subtitle = value;
               }),
+          const ColorsListView(),
           const SizedBox(
             height: 30,
           ),
