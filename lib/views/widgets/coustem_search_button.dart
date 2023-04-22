@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CoustemSerarchButton extends StatelessWidget {
-  const CoustemSerarchButton({super.key, required this.icon});
+  const CoustemSerarchButton(
+      {super.key, required this.icon, required this.onPressed});
 
   final IconData icon;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +15,7 @@ class CoustemSerarchButton extends StatelessWidget {
       ),
       child: Center(
         child: IconButton(
-          onPressed: () {},
+          onPressed: onPressed,
           icon: Icon(
             icon,
             size: 28,

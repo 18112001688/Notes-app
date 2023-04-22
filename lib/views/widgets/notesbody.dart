@@ -23,15 +23,16 @@ class _NotesViewBodyState extends State<NotesViewBody> {
     return Padding(
       padding: const EdgeInsets.only(top: 40, right: 12, left: 12),
       child: Column(
-        children: const [
+        children: [
           CoustemAppBar(
             icon: Icons.search,
             title: 'Notes',
+            onPressed: () {},
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Expanded(child: NotesListView()),
+          const Expanded(child: NotesListView()),
         ],
       ),
     );
