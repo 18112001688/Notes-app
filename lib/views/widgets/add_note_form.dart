@@ -50,6 +50,9 @@ class _AddNotesFormState extends State<AddNotesForm> {
               onSaved: (value) {
                 subtitle = value;
               }),
+          const SizedBox(
+            height: 30,
+          ),
           const ColorsListView(),
           const SizedBox(
             height: 30,
