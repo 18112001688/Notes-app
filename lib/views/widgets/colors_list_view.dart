@@ -42,6 +42,9 @@ class _ColorsListViewState extends State<ColorsListView> {
     Color(0xff4C3957),
     Color(0xffDBF9F4),
     Color(0xffE6FDFF),
+    Color(0xffD9D7DD),
+    Color(0xffB07BAC),
+    Color(0xff5F7367),
   ];
   @override
   Widget build(BuildContext context) {
