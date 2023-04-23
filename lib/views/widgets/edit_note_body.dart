@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/constant/constant.dart';
 import 'package:notes_app/cubit/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/views/widgets/colors_list_view.dart';
+import 'package:notes_app/views/widgets/edit_notes_view._colors.dart';
 
 import 'coustem_app_bar.dart';
 import 'coustem_field.dart';
@@ -60,7 +63,11 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               onChanged: (data) {
                 content = data;
               },
-            )
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            EditNotesColorsList(note: widget.note),
           ],
         ),
       ),
